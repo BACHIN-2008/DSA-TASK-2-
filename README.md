@@ -1,97 +1,79 @@
+DSA Assessment Task 2 – Stack Operations Using an Array
 
-#include <stdio.h>
-#define SIZE 5
+Student Details
 
-int stack[SIZE];
-int top = -1;
+* Name: BHAVANISH ROSHAN G
+* Register Number: RA2511026050154
+* Institution: SRM Institute of Science and Technology, Tiruchirappalli
+* Course: Data Structures and Algorithms (DSA)
 
-void push(int item)
-{
-    if (top == SIZE - 1)
-    {
-        printf("Stack Overflow\n");
-    }
-    else
-    {
-        top++;
-        stack[top] = item;
-        printf("Pushed: %d\n", item);
-    }
-}
+Topic
 
-int pop()
-{
-    if (top == -1)
-    {
-        printf("Stack Underflow\n");
-        return -1;
-    }
-    else
-    {
-        int item = stack[top];
-        top--;
-        return item;
-    }
-}
+Stack Operations Using an Array (C Programming)
 
-void display()
-{
-    int i;
+Aim
 
-    if (top == -1)
-    {
-        printf("Stack is Empty\n");
-    }
-    else
-    {
-        printf("Stack: ");
-        for (i = 0; i <= top; i++)
-        {
-            printf("%d ", stack[i]);
-        }
-        printf("\n");
-    }
-}
+To implement Stack operations using an array in C and understand PUSH, POP, and DISPLAY operations.
 
-int main()
-{
-    int item;
+Description
 
-    push(10);
-    push(20);
-    push(30);
+This program implements a Stack using an array of fixed size 5.
 
-    display();
+Stack follows the LIFO (Last In First Out) principle.
 
-    item = pop();
-    printf("Popped: %d\n", item);
+Operations Used
 
-    push(40);
-    push(50);
-    push(60);
-    push(70);
+1. PUSH – Inserts an element into the Stack.
+2. POP – Removes the top element from the Stack.
+3. DISPLAY – Displays all elements present in the Stack.
 
-    display();
+Variables Used
 
-    item = pop();
-    printf("Popped: %d\n", item);
+* SIZE – Maximum size of the Stack (5).
+* stack[] – Array used to store elements.
+* top – Tracks the top position of the Stack.
+* item – Stores the value being inserted or removed.
+* i – Loop variable used in display().
 
-    item = pop();
-    printf("Popped: %d\n", item);
+Overflow and Underflow
 
-    item = pop();
-    printf("Popped: %d\n", item);
+* Stack Overflow occurs when an insertion is attempted on a full Stack.
+* Stack Underflow occurs when a deletion is attempted on an empty Stack.
 
-    item = pop();
-    printf("Popped: %d\n", item);
+Program Features
 
-    item = pop();
-    printf("Popped: %d\n", item);
+* Array-based Stack implementation.
+* Overflow checking.
+* Underflow checking.
+* PUSH, POP, and DISPLAY functions.
 
-    display();
+Expected Output
 
-    item = pop();
-    printf("Popped: %d\n", item);
+Pushed: 10
+Pushed: 20
+Pushed: 30
+Stack: 10 20 30
+Popped: 30
+Pushed: 40
+Pushed: 50
+Pushed: 60
+Stack Overflow
+Stack: 10 20 40 50 60
+Popped: 60
+Popped: 50
+Popped: 40
+Popped: 20
+Popped: 10
+Stack is Empty
+Stack Underflow
+Popped: -1
 
-    return 0;
-}
+Conclusion
+
+This program helps to understand the working of Stack operations using arrays. It demonstrates the LIFO principle and handles Stack Overflow and Stack Underflow conditions.
+
+Technologies Used
+
+* Programming Language: C
+* Data Structure: Stack
+* Platform: GitHub
